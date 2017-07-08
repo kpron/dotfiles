@@ -1,5 +1,5 @@
 PROJECTS_DIR="WGProjects"
-if [ -d "$PROJECTS_DIR" ]; then
+if [ -d "~/$PROJECTS_DIR" ]; then
     alias ls="ls --color=auto"
     alias wd="cd ~/$PROJECTS_DIR/web_deploy"
     alias mf="cd ~/$PROJECTS_DIR/mini_fabrics; vim"

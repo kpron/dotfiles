@@ -37,4 +37,5 @@ gpro:
 	@cd ~ ; git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt
 
 ciscosetup:
-	@bash vpnsetup.sh
+	@sudo mkdir /etc/rc.d
+	@sudo bash vpnsetup.sh
