@@ -14,6 +14,7 @@ vrc:
 
 xres:
 	@ln -s ~/dotfiles/Xresources ~/.Xresources
+	@xrdb ~/.Xresources
 
 plugins:
 	@vim +PluginInstall +qall
