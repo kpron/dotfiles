@@ -1,0 +1,98 @@
+! URXVT GENERAL CONFIG
+!------------------------------------------------
+URxvt.geometry: 80x22
+URxvt*termName: rxvt
+! URXVT FONTS
+!------------------------------------------------
+URxvt.font: xft:Anonymice Powerline:size=13:antialiasing=true
+URxvt.boldFont:xft:Anonymice Powerline:bold:size=13
+URxvt.italicfont:xft:Anonymice Powerline:italic:size=13
+URxvt.bolditalicFont:xft:Anonymice Powerline:bold:italic:size=13
+URxvt*letterSpace: 0.7
+URxvt*allow_bold: true
+! URXVT FONT SETTINGS
+!------------------------------------------------
+Xft.autohint: true
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+! URXVT ENABLE LINK SUPPORT
+!------------------------------------------------
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.perl-ext: default,tabbedex
+! Tabbedex features
+URxvt.tabbed.new-button:       false
+URxvt.tabbed.autohide:         true
+URxvt.tabbed.no-tabbedex-keys: true
+
+! Tabbedex colors
+URxvt.tabbed.tabbar-fg:   244
+URxvt.tabbed.tabbar-bg:   16
+URxvt.tabbed.tab-fg:      255
+URxvt.tabbed.tab-bg:      52
+URxvt.tabbed.bell-tab-fg: 255
+URxvt.tabbed.bell-tab-bg: 160
+URxvt.tabbed.bell-fg:     244
+URxvt.tabbed.bell-bg:     17
+URxvt.tabbed.title-fg:    28
+URxvt.tabbed.title-bg:    16
+
+! Tabbedex keybindings 
+URxvt.keysym.Shift-Down:    perl:tabbedex:new_tab
+URxvt.keysym.Shift-Left:    perl:tabbedex:prev_tab
+URxvt.keysym.Shift-Right:   perl:tabbedex:next_tab
+URxvt.keysym.Shift-Up:      perl:tabbedex:rename_tab
+!disable the fucking bell
+URxvt.insecure: false
+! URXVT COPY PASTE SHORTCUTS
+!------------------------------------------------
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+! URXVT SCROLLBAR AND CURSOR STYLE
+!------------------------------------------------
+URxvt*saveLines: 300000
+URxvt.scrollBar: false
+URxvt*secondaryScroll: true
+URxvt*cursorBlink: true
+URxvt*cursorUnderline: true
+
+! fix ctrl+arrows
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Left: \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+
+! special
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #c5c8c6
+! black
+*.color0:       #1d1f21
+*.color8:       #969896
+! red
+*.color1:       #cc342b
+*.color9:       #cc342b
+! green
+*.color2:       #198844
+*.color10:      #198844
+! yellow
+*.color3:       #fba922
+*.color11:      #fba922
+! blue
+*.color4:       #3971ed
+*.color12:      #3971ed
+! magenta
+*.color5:       #a36ac7
+*.color13:      #a36ac7
+! cyan
+*.color6:       #3971ed
+*.color14:      #3971ed
+! white
+*.color7:       #c5c8c6
+*.color15:      #ffffff
+
