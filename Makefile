@@ -1,8 +1,14 @@
-all: vundle clrs vrc xres plugins
+all: vundle fnt clrs vrc xres plugins
 
 vundle:
 	@git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+fnt:
+	@git clone https://github.com/powerline/fonts.git /tmp/fonts
+	@cd /tmp/fonts
+	@./install.sh
+	@cd
+	@rm -rf /tmp/fonts
 clrs:
 	@ln -s ~/dotfiles/colors ~/.vim/colors
 
