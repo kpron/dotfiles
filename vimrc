@@ -6,13 +6,13 @@ set t_Co=256
 set cursorline
 colorscheme gruvbox
 set relativenumber
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 Plugin 'tpope/vim-surround'
 Plugin 'VundleVim/Vundle.vim'
