@@ -7,6 +7,7 @@ export LANGUAGE=en_US.UTF-8
 export BROWSER="chromium"
 export GOPATH=~/go
 export PATH=$PATH:~/go/bin
+export PATH=$PATH:/usr/local/bin
 export EDITOR="vim"
 
 # If not running interactively, don't do anything
