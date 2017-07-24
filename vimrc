@@ -58,6 +58,15 @@ function! s:UpdateBwLib( version )
 endfunction
 command! -nargs=1 UpdateBwLib call s:UpdateBwLib("<args>")
 
+function! s:UpdateApp(app, version)
+    echom "Updating ".a:app." to ".a:version
+    execute "YamlGoToKey ".a:app
+    execute "normal /components_redefines\<CR>"
+    execute "normal 2j2ddko"."branch: '".a:version."'"
+    execute "normal o"."version: '".a:version."'"
+endfunction
+command! -nargs=* UpdateApp call s:UpdateApp(<f-args>)
+
 function! s:FeBe( node )
     echom "Generate..."
     let feip = system('dig A +short '.a:node.".fe.core.pw|xargs echo -n")
