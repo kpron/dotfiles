@@ -29,6 +29,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/goyo.vim'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-commentary'
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()
 filetype plugin indent on
@@ -43,6 +45,7 @@ vnoremap <DOWN> xp`[V`]
 nmap <Tab> :bnext<CR>
 
 map <Leader>n :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
 nnoremap <F3> :YamlGoToKey<Space>
 let g:airline_powerline_fonts = 1
