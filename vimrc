@@ -33,6 +33,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'majutsushi/tagbar'
 Plugin 'andrewradev/linediff.vim'
 Plugin 'rodjek/vim-puppet'
+Plugin 'md5.vim'
 
 call vundle#end()
 filetype plugin indent on
