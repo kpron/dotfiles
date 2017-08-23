@@ -33,7 +33,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'majutsushi/tagbar'
 Plugin 'andrewradev/linediff.vim'
 Plugin 'rodjek/vim-puppet'
-Plugin 'md5.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -85,3 +84,11 @@ function! s:FeBe( node )
     execute "normal o".fqdn
 endfunction
 command! -nargs=1 FeBe call s:FeBe("<args>")
+
+
+function! s:Md5( key )
+    echom "Generate..."
+    let md5hash = system('echo '.a:key."|md5sum|cut -f1 -d' '")
+    execute "normal o".md5hash
+endfunction
+command! -nargs=1 Md5 call s:Md5("<args>")
