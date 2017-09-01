@@ -10,6 +10,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
+set clipboard=unnamed
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -33,6 +34,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'majutsushi/tagbar'
 Plugin 'andrewradev/linediff.vim'
 Plugin 'rodjek/vim-puppet'
+Plugin 'kpron/vim-dpaste'
 
 call vundle#end()
 filetype plugin indent on
