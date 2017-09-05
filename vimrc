@@ -35,6 +35,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'andrewradev/linediff.vim'
 Plugin 'rodjek/vim-puppet'
 Plugin 'kpron/vim-dpaste'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 filetype plugin indent on
@@ -55,6 +57,9 @@ nnoremap <F3> :YamlGoToKey<Space>
 let g:airline_powerline_fonts = 1
 let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1
+
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsEditSplit="vertical"
 
 function! s:UpdateBwLib( version )
 	echom "Updating to" a:version
