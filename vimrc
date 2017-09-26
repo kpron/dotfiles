@@ -12,6 +12,8 @@ set expandtab
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 set clipboard=unnamed
 
+set wildmenu
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
