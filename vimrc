@@ -47,6 +47,9 @@ nnoremap <DOWN> ddp
 vnoremap <UP> xkP`[V`]
 vnoremap <DOWN> xp`[V`]
 
+map q: <Nop>
+" Disable annoying ex mode (Q)
+nnoremap Q <nop>
 
 nmap <Tab> :bnext<CR>
 
