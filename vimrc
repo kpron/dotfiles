@@ -13,6 +13,12 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 set clipboard=unnamed
 
 set wildmenu
+set nosmd
+
+" disable stupid backup and swap files - they trigger too many events for file system watchers
+set nobackup
+set nowritebackup
+set noswapfile
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
