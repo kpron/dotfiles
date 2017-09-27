@@ -45,6 +45,8 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'kpron/vim-dpaste'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'vimwiki/vimwiki'
+Plugin 'skywind3000/quickmenu.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -65,6 +67,13 @@ map <F2> :NERDTreeToggle<CR>
 nmap <F8> :TagbarOpenAutoClose<CR>
 
 nnoremap <F3> :YamlGoToKey<Space>
+
+noremap <silent><F12> :call quickmenu#toggle(0)<cr>
+call quickmenu#reset()
+let g:quickmenu_options = "HL"
+
+call g:quickmenu#append('MD5', 'Md5 `date +\%s`', 'Generate md5 hash')
+
 let g:airline_powerline_fonts = 1
 let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1
