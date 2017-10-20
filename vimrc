@@ -47,6 +47,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'vimwiki/vimwiki'
 Plugin 'skywind3000/quickmenu.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'vayw/toggle-bool'
 
 call vundle#end()
 filetype plugin indent on
@@ -119,3 +121,18 @@ function! s:Md5( key )
     execute "normal o".md5hash
 endfunction
 command! -nargs=1 Md5 call s:Md5("<args>")
+
+
+" Add the virtualenv's site-packages to vim path
+if has('python')
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+endif
