@@ -49,9 +49,14 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'skywind3000/quickmenu.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'vayw/toggle-bool'
+Plugin 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --bin' }
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 filetype plugin indent on
+
+" vim-dpaste params
+let g:dpaste_url = "http://paste.ix/api/"
 
 " Useful bubble text normal mapping for arrow keys.                                                                                        
 nnoremap <UP> ddkP 
