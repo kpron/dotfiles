@@ -1,4 +1,3 @@
-syntax on
 set nocompatible
 filetype off
 set laststatus=2
@@ -51,6 +50,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'vayw/toggle-bool'
 Plugin 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --bin' }
 Plugin 'junegunn/fzf.vim'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 filetype plugin indent on
@@ -58,8 +58,8 @@ filetype plugin indent on
 " vim-dpaste params
 let g:dpaste_url = "http://paste.ix/api/"
 
-" Useful bubble text normal mapping for arrow keys.                                                                                        
-nnoremap <UP> ddkP 
+" Useful bubble text normal mapping for arrow keys.
+nnoremap <UP> ddkP
 nnoremap <DOWN> ddp
 vnoremap <UP> xkP`[V`]
 vnoremap <DOWN> xp`[V`]
@@ -87,6 +87,10 @@ let g:airline#extensions#tabline#enabled = 1
 
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsEditSplit="vertical"
+
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
 
 function! s:UpdateBwLib( version )
 	echom "Updating to" a:version
