@@ -20,6 +20,16 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" splits
+set splitright
+set splitbelow
+
+"" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -52,6 +62,8 @@ Plugin 'vayw/toggle-bool'
 Plugin 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --bin' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'w0rp/ale'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'shougo/neopairs.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -70,11 +82,35 @@ map q: <Nop>
 nnoremap Q <nop>
 
 nmap <Tab> :bnext<CR>
+nmap <S-Tab> :bprev<CR>
+
+" Auto complition hotkey
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
 
 map <F2> :NERDTreeToggle<CR>
 nmap <F8> :TagbarOpenAutoClose<CR>
 
 nnoremap <F3> :YamlGoToKey<Space>
+
+"" Switching windows
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+
+"" Vmap for maintain Visual Mode after shifting > and <
+vmap < <gv
+vmap > >gv
+
+"" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 noremap <silent><F12> :call quickmenu#toggle(0)<cr>
 call quickmenu#reset()
@@ -92,6 +128,28 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
+
+"" Remember cursor position
+augroup vimrc-remember-cursor-position
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+
+" GO
+" use goimports for formatting
+let g:go_fmt_command = "goimports"
+
+" turn highlighting on
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+
+" Open go doc in vertical window, horizontal, or tab
+au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
 
 function! s:UpdateBwLib( version )
 	echom "Updating to" a:version
