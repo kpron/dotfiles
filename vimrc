@@ -4,7 +4,6 @@ filetype off
 set laststatus=2
 set t_Co=256
 set cursorline
-colorscheme gruvbox
 set relativenumber
 set tabstop=4
 set shiftwidth=4
@@ -67,6 +66,9 @@ Plugin 'shougo/neopairs.vim'
 
 call vundle#end()
 filetype plugin indent on
+
+set rtp+=~/.vim
+colorscheme gruvbox
 
 " vim-dpaste params
 let g:dpaste_url = "http://paste.ix/api/"
@@ -160,12 +162,12 @@ function! s:UpdateBwLib( version )
 endfunction
 command! -nargs=1 UpdateBwLib call s:UpdateBwLib("<args>")
 
-function! s:UpdateApp(app, version)
-    echom "Updating ".a:app." to ".a:version
+function! s:UpdateApp(app, branch, ...)
+    let l:version = a:0 > 0 ? a:1 : a:branch
     execute "YamlGoToKey ".a:app
     execute "normal /components_redefines\<CR>"
-    execute "normal 2j2ddko"."branch: '".a:version."'"
-    execute "normal o"."version: '".a:version."'"
+    execute "normal 2j2ddko"."branch: '".a:branch."'"
+    execute "normal o"."version: '".l:version."'"
 endfunction
 command! -nargs=* UpdateApp call s:UpdateApp(<f-args>)
 
