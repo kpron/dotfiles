@@ -4,11 +4,11 @@ URxvt.geometry: 80x22
 URxvt*termName: rxvt
 ! URXVT FONTS
 !------------------------------------------------
-URxvt.font: xft:Anonymice Powerline:size=13:antialiasing=true
-URxvt.boldFont:xft:Anonymice Powerline:bold:size=13
-URxvt.italicfont:xft:Anonymice Powerline:italic:size=13
-URxvt.bolditalicFont:xft:Anonymice Powerline:bold:italic:size=13
-URxvt*letterSpace: 0.7
+URxvt*font: xft:DejaVu Sans Mono:antialias=true:pixelsize=14
+URxvt*boldFont: xft:DejaVu Sans Mono:style=bold:antialias=true:pixelsize=14
+URxvt*italicFont: xft:DejaVu Sans Mono:style=italic:antialias=true:pixelsize=14
+URxvt*boldItalicFont: xft:DejaVu Sans Mono:style=bolditalic:antialias=true:pixelsize=14
+URxvt*letterSpace: 0.6
 URxvt*allow_bold: true
 ! URXVT FONT SETTINGS
 !------------------------------------------------
@@ -41,7 +41,7 @@ URxvt.tabbed.bell-bg:     17
 URxvt.tabbed.title-fg:    28
 URxvt.tabbed.title-bg:    16
 
-! Tabbedex keybindings 
+! Tabbedex keybindings
 URxvt.keysym.Shift-Down:    perl:tabbedex:new_tab
 URxvt.keysym.Shift-Left:    perl:tabbedex:prev_tab
 URxvt.keysym.Shift-Right:   perl:tabbedex:next_tab
