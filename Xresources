@@ -4,10 +4,10 @@ URxvt.geometry: 80x22
 URxvt*termName: rxvt
 ! URXVT FONTS
 !------------------------------------------------
-URxvt*font: xft:DejaVu Sans Mono:antialias=true:pixelsize=14
-URxvt*boldFont: xft:DejaVu Sans Mono:style=bold:antialias=true:pixelsize=14
-URxvt*italicFont: xft:DejaVu Sans Mono:style=italic:antialias=true:pixelsize=14
-URxvt*boldItalicFont: xft:DejaVu Sans Mono:style=bolditalic:antialias=true:pixelsize=14
+URxvt*font: xft:DejaVu Sans Mono for Powerline-10:antialias=true:pixelsize=14
+URxvt*boldFont: xft:DejaVu Sans Mono for Powerline-10:style=bold:antialias=true:pixelsize=14
+URxvt*italicFont: xft:DejaVu Sans Mono for Powerline-10:style=italic:antialias=true:pixelsize=14
+URxvt*boldItalicFont: xft:DejaVu Sans Mono for Powerline-10:style=bolditalic:antialias=true:pixelsize=14
 URxvt*letterSpace: 0.6
 URxvt*allow_bold: true
 ! URXVT FONT SETTINGS

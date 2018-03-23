@@ -17,8 +17,8 @@ export EDITOR="vim"
 stty stop ''
 
 PS1='[\u@\h \W]\$ '
-GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_THEME=Crunch
+GIT_PROMPT_ONLY_IN_REPO=0
+GIT_PROMPT_THEME=Single_line_Dark
 source ~/.bash-git-prompt/gitprompt.sh
 
 source ~/fabric-completion/fabric-completion.bash
