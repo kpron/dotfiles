@@ -29,6 +29,9 @@ set incsearch
 set ignorecase
 set smartcase
 
+"" Bufferline
+set showtabline=2
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -40,8 +43,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kpron/vim-yaml-helper'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/goyo.vim'
@@ -63,12 +64,14 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'w0rp/ale'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'shougo/neopairs.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'mgee/lightline-bufferline'
+Plugin 'mhinz/vim-startify'
 
 call vundle#end()
 filetype plugin indent on
 
 set rtp+=~/.vim
-colorscheme gruvbox
 
 " vim-dpaste params
 let g:dpaste_url = "http://paste.ix/api/"
@@ -120,9 +123,21 @@ let g:quickmenu_options = "HL"
 
 call g:quickmenu#append('MD5', 'Md5 `date +\%s`', 'Generate md5 hash')
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme='bubblegum'
-let g:airline#extensions#tabline#enabled = 1
+ let g:lightline = {
+       \ 'colorscheme': 'seoul256',
+       \ 'active': {
+       \   'left': [ [ 'mode', 'paste' ],
+       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+       \ },
+       \ 'component_function': {
+       \   'gitbranch': 'fugitive#head'
+       \ },
+       \ }
+
+let g:lightline.tabline          = {'left': [['buffers']], 'right': []}
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type   = {'buffers': 'tabsel'}
+
 
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsEditSplit="vertical"
@@ -150,15 +165,17 @@ let g:go_highlight_build_constraints = 1
 
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 
+colorscheme gruvbox
+
 " Open go doc in vertical window, horizontal, or tab
 au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
 
 function! s:UpdateBwLib( version )
-	echom "Updating to" a:version
-	execute "normal /wows-glossary-artefact\<CR>"
-	execute "normal f[ci[".a:version
-	execute "YamlGoToKey wows.bw.bw_lib_package"
-	execute "normal f=2lc$".a:version
+    echom "Updating to" a:version
+    execute "normal /wows-glossary-artefact\<CR>"
+    execute "normal f[ci[".a:version
+    execute "YamlGoToKey wows.bw.bw_lib_package"
+    execute "normal f=2lc$".a:version
 endfunction
 command! -nargs=1 UpdateBwLib call s:UpdateBwLib("<args>")
 
