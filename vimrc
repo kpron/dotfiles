@@ -19,6 +19,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" enable autowrite changes, when switch the buffer
+set autowrite
+
 " splits
 set splitright
 set splitbelow
@@ -67,6 +70,9 @@ Plugin 'shougo/neopairs.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'mgee/lightline-bufferline'
 Plugin 'mhinz/vim-startify'
+Plugin 'ap/vim-css-color'
+Plugin 'elzr/vim-json'
+Plugin 'jelera/vim-javascript-syntax'
 
 call vundle#end()
 filetype plugin indent on
@@ -164,6 +170,9 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+
+let g:fzf_layout = { 'right': '~40%' }
+nnoremap <silent> ; :Files<CR>
 
 colorscheme gruvbox
 
