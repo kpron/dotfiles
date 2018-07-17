@@ -103,6 +103,7 @@ map <F2> :NERDTreeToggle<CR>
 nmap <F8> :TagbarOpenAutoClose<CR>
 
 nnoremap <F3> :YamlGoToKey<Space>
+nnoremap <F4> :vert term<CR>
 
 "" Switching windows
 noremap <C-j> <C-w>j
@@ -122,6 +123,9 @@ vnoremap K :m '<-2<CR>gv=gv
 " search will center on the line it's found in.
 nnoremap n nzzzv
 nnoremap N Nzzzv
+
+" GUTTER
+let g:gitgutter_max_signs=9999
 
 noremap <silent><F12> :call quickmenu#toggle(0)<cr>
 call quickmenu#reset()
@@ -147,6 +151,7 @@ let g:lightline.component_type   = {'buffers': 'tabsel'}
 
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
@@ -168,6 +173,10 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+let g:go_auto_type_info = 1
 
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 
